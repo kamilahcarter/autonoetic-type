@@ -1,0 +1,26 @@
+/* ---------- Box Model ---------- */
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+/* ---------- Reset ---------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, strong, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, input, button, label, table, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a {
+	text-decoration: none;
+}
+ol, ul {
+	list-style: none;
+}

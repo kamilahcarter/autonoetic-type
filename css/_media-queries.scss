@@ -1,0 +1,8 @@
+/* ---------- Small ---------- */
+@media screen and (min-width: 400px) {
+	@include nav--sm();
+}
+/* ---------- Large ---------- */
+@media screen and (min-width: 1000px) {
+	@include nav--lg();
+}

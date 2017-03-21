@@ -1,0 +1,73 @@
+/* ---------- Reset ---------- */
+@import 'reset';
+@import 'mixins';
+/* ---------- Colours ---------- */
+$color-black: #000000;
+$color-white: #ffffff;
+$color-mgrey: #a2a2a7;
+$color-lgrey: #ebebf0;
+$color-blue: #0000ff;
+$color-lblue: #9090ff;
+
+$main-padding: 50px;
+$main-font: "Montserrat", sans-serif;
+$main-font-size: 1em;
+$main-font-weight: 400;
+$main-line-height: 1.75;
+
+$font-weight-bold: 700;
+
+$line-height-short: 1;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: +.6;
+
+$btn-line-height: 2.5;
+$btn-padding: 0 12px;
+
+$outline-weight: 3px;
+
+/* ---------- Typography ---------- */
+body {
+	font-family: $main-font;
+	font-size: $main-font-size;
+	font-weight: $main-font-weight;
+	line-height: $main-line-height;
+}
+/* ---------- Container ---------- */
+body, .container {
+	width: 100%;
+	height: 100vh;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+	width: 100%;
+	padding: $main-padding;
+	padding-right: 0;
+	background-color: $color-lgrey;
+}
+.main-nav {
+	> li {
+		margin-top: 20px;
+		font-size: 1.5em;
+		font-weight: $font-weight-bold;
+		text-transform: uppercase;
+		display: block;
+		width: calc(100vh - #{$main-padding});
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+@mixin nav--sm() {
+	nav {
+		width: 40%;
+	}
+}
+@mixin nav--lg() {
+	nav {
+		width: 20%;
+	}
+}
+/* ---------- Media Queries ---------- */
+@import 'media-queries';

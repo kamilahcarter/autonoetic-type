@@ -1,0 +1,14 @@
+@mixin font-face($name, $weight) {
+	@font-face {
+	  font-family: '$name';
+	  src: url('../fonts/#{$name}-#{$weight}.eot');
+	  src: url('../fonts/#{$name}-#{$weight}.woff2') format('woff2'),
+	       url('../fonts/#{$name}-#{$weight}.woff') format('woff'),
+	       url('../fonts/#{$name}-#{$weight}.ttf') format('truetype');
+	}
+}
+@mixin inset-outline($weight, $color) {
+	-webkit-box-shadow:inset 0px 0px 0px $weight $color;
+       -moz-box-shadow:inset 0px 0px 0px $weight $color;
+    		box-shadow:inset 0px 0px 0px $weight $color;
+}
