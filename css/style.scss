@@ -17,6 +17,10 @@ $main-line-height: 1.75;
 
 $font-weight-bold: 700;
 
+$nav-width-sm: 40%;
+$nav-width-lg: 20%;
+
+
 $line-height-short: 1;
 $letter-spacing-normal: 0;
 $letter-spacing-wide: +.6;
@@ -26,12 +30,16 @@ $btn-padding: 0 12px;
 
 $outline-weight: 3px;
 
-/* ---------- Typography ---------- */
+/* ------ Typography ---------- */
 body {
 	font-family: $main-font;
 	font-size: $main-font-size;
 	font-weight: $main-font-weight;
 	line-height: $main-line-height;
+}
+/* --- Links --- */
+a:visited, a:active {
+	color: $color-lblue;
 }
 /* ---------- Container ---------- */
 body, .container {
@@ -42,32 +50,94 @@ body, .container {
 /* ---------- Navigation ---------- */
 nav {
 	width: 100%;
+	float: left;
 	padding: $main-padding;
 	padding-right: 0;
 	background-color: $color-lgrey;
 }
 .main-nav {
 	> li {
-		margin-top: 20px;
+		margin-top: 1.5em;
 		font-size: 1.5em;
 		font-weight: $font-weight-bold;
 		text-transform: uppercase;
-		display: block;
-		width: calc(100vh - #{$main-padding});
+		overflow: hidden;
+		> a {
+			display: block;
+			width: calc(100vw - #{$main-padding});
+			line-height: 1.3;
+			border-bottom: .15em solid $color-lblue;
+			margin-bottom: 0.5em;
+			&:hover {
+				color: $color-blue;
+				border-bottom-color: $color-blue;
+			}
+		}
 		&:first-child {
 			margin-top: 0;
 		}
+		&.active {
+			overflow: visible;
+			a {
+				color: $color-blue;
+				border-bottom-color: $color-blue;
+			}
+			+ .sub-nav {
+				display: initial;
+			}
+		}
+	}
+}
+.sub-nav {
+	> li {
+		&.active  a {
+			color: $color-blue;
+		}
+	}
+	a {
+		color: $color-black;
+		&:visited {
+			color: $color-black;
+		}
+		&:hover {
+			color: $color-blue;
+		}
+	}
+}
+.js {
+	.sub-nav {
+		display: none;
 	}
 }
 @mixin nav--sm() {
 	nav {
-		width: 40%;
+		width: $nav-width-sm;
+		min-height: 100%;
 	}
 }
 @mixin nav--lg() {
 	nav {
-		width: 20%;
+		width: $nav-width-lg;
 	}
 }
+/* ---------- Main ---------- */
+main {
+	width: 100%;
+	float: left;
+	padding: $main-padding;
+}
+@mixin main--sm() {
+	main {
+		width: 100% - $nav-width-sm;
+		height: 100%;
+		overflow-y: auto;
+	}
+}
+@mixin main--lg() {
+	main {
+		width: 100% - $nav-width-lg;
+	}
+}
+
 /* ---------- Media Queries ---------- */
 @import 'media-queries';

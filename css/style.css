@@ -26,12 +26,16 @@ ol, ul {
   list-style: none; }
 
 /* ---------- Colours ---------- */
-/* ---------- Typography ---------- */
+/* ------ Typography ---------- */
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.75; }
+
+/* --- Links --- */
+a:visited, a:active {
+  color: #9090ff; }
 
 /* ---------- Container ---------- */
 body, .container {
@@ -41,28 +45,71 @@ body, .container {
 /* ---------- Navigation ---------- */
 nav {
   width: 100%;
+  float: left;
   padding: 50px;
   padding-right: 0;
   background-color: #ebebf0; }
 
 .main-nav > li {
-  margin-top: 20px;
+  margin-top: 1.5em;
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
-  display: block;
-  width: calc(100vh - 50px); }
+  overflow: hidden; }
+  .main-nav > li > a {
+    display: block;
+    width: calc(100vw - 50px);
+    line-height: 1.3;
+    border-bottom: 0.15em solid #9090ff;
+    margin-bottom: 0.5em; }
+    .main-nav > li > a:hover {
+      color: #0000ff;
+      border-bottom-color: #0000ff; }
   .main-nav > li:first-child {
     margin-top: 0; }
+  .main-nav > li.active {
+    overflow: visible; }
+    .main-nav > li.active a {
+      color: #0000ff;
+      border-bottom-color: #0000ff; }
+    .main-nav > li.active + .sub-nav {
+      display: initial; }
+
+.sub-nav > li.active a {
+  color: #0000ff; }
+.sub-nav a {
+  color: #000000; }
+  .sub-nav a:visited {
+    color: #000000; }
+  .sub-nav a:hover {
+    color: #0000ff; }
+
+.js .sub-nav {
+  display: none; }
+
+/* ---------- Main ---------- */
+main {
+  width: 100%;
+  float: left;
+  padding: 50px; }
 
 /* ---------- Media Queries ---------- */
 /* ---------- Small ---------- */
 @media screen and (min-width: 400px) {
   nav {
-    width: 40%; } }
+    width: 40%;
+    min-height: 100%; }
+
+  main {
+    width: 60%;
+    height: 100%;
+    overflow-y: auto; } }
 /* ---------- Large ---------- */
 @media screen and (min-width: 1000px) {
   nav {
-    width: 20%; } }
+    width: 20%; }
+
+  main {
+    width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */
