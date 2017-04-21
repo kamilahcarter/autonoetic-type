@@ -1,5 +1,6 @@
 /* ---------- Small ---------- */
 @media screen and (min-width: 400px) {
+	@include container--sm();
 	@include nav--sm();
 	@include main--sm();
 }
