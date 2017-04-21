@@ -37,6 +37,9 @@ body {
 	font-weight: $main-font-weight;
 	line-height: $main-line-height;
 }
+p {
+	margin-top: 10px;
+}
 /* --- Links --- */
 a {
 	color: $color-blue;
@@ -132,6 +135,9 @@ nav {
 main {
 	width: 100%;
 	float: left;
+	h2 {
+		color: $color-blue;
+	}
 }
 @mixin main--sm() {
 	main {
@@ -148,9 +154,20 @@ main {
 
 /* ---------- Sections---------- */
 section {
-	min-height: 150px;
 	section {
 		padding: $main-padding;
+	}
+}
+
+.white-section {
+	background-color: $color-white;
+}
+
+.blue-section {
+	background-color: $color-blue;
+	color: $color-white;
+	h2 {
+		color: $color-white;
 	}
 }
 
