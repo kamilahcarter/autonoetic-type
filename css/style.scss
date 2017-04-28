@@ -48,9 +48,14 @@ a:visited, a:active {
 	color: $color-lblue;
 }
 
+/* ---------- Images ---------- */
+img {
+	width: 100%;
+}
+
 /* ---------- Helper Classes ---------- */
 .bottom-padding {
-	padding-bottom: $main-padding;
+	padding-bottom: $main-padding / 2;
 }
 
 /* ---------- Container ---------- */
@@ -171,6 +176,11 @@ section {
 	background-color: rgba(255,255,255,0.9);
 }
 
+.lblue-section {
+	background-color: rgba(0,0,255,0.30);
+	color: $color-white;
+}
+
 .blue-section {
 	background-color: $color-blue;
 	color: $color-white;
@@ -192,6 +202,9 @@ section {
 	}
 	.col-3 {
 		width: 75%;
+	}
+	.margin-left-1 {
+		margin-left: 25%;
 	}
 }
 

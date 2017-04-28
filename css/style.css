@@ -43,9 +43,13 @@ a {
 a:visited, a:active {
   color: #9090ff; }
 
+/* ---------- Images ---------- */
+img {
+  width: 100%; }
+
 /* ---------- Helper Classes ---------- */
 .bottom-padding {
-  padding-bottom: 50px; }
+  padding-bottom: 25px; }
 
 /* ---------- Container ---------- */
 body, .container {
@@ -114,6 +118,10 @@ section section {
 .white-section {
   background-color: rgba(255, 255, 255, 0.9); }
 
+.lblue-section {
+  background-color: rgba(0, 0, 255, 0.3);
+  color: #ffffff; }
+
 .blue-section {
   background-color: #0000ff;
   color: #ffffff; }
@@ -150,6 +158,9 @@ section section {
     width: 50%; }
 
   .col-3 {
-    width: 75%; } }
+    width: 75%; }
+
+  .margin-left-1 {
+    margin-left: 25%; } }
 
 /*# sourceMappingURL=style.css.map */
