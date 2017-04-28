@@ -11,7 +11,7 @@ $color-lblue: #9090ff;
 
 $main-padding: 50px;
 $main-font: "Montserrat", sans-serif;
-$main-font-size: 1.2em;
+$main-font-size: 1em;
 $main-font-weight: 400;
 $main-line-height: 1.75;
 
@@ -39,14 +39,36 @@ body {
 }
 p {
 	margin-top: 10px;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+section {
+	ul {
+		margin-top: 20px;
+	}
+	li {
+		color: $color-blue;
+	}
+}
+
+@mixin type--lg() {
+	body {
+		font-size: $main-font-size * 1.2;
+	}
 }
 /* --- Links --- */
 a {
 	color: $color-blue;
+	&:visited {
+		color: $color-lblue;
+	}
+	&:active {
+		color: $color-lblue;
+	}
 }
-a:visited, a:active {
-	color: $color-lblue;
-}
+
 
 /* ---------- Images ---------- */
 img {
@@ -54,8 +76,13 @@ img {
 }
 
 /* ---------- Helper Classes ---------- */
-.bottom-padding {
-	padding-bottom: $main-padding / 2;
+.hide {
+	display: none;
+}
+
+.behind {
+	position: relative;
+	z-index: -1;
 }
 
 /* ---------- Container ---------- */
@@ -63,16 +90,12 @@ body, .container {
 	width: 100%;
 	min-height: 100vh;
 }
-@mixin container--sm() {
-	.container {
-	}
-}
 
 /* ---------- Navigation ---------- */
 nav {
 	width: 100%;
 	float: left;
-	padding: $main-padding;
+	padding: $main-padding * 3 / 5;
 	padding-right: 0;
 	background-color: $color-lgrey;
 }
@@ -85,7 +108,7 @@ nav {
 		overflow: hidden;
 		> a {
 			display: block;
-			width: calc(100vw - #{$main-padding});
+			width: calc(100vw - (#{$main-padding} * 3 / 5));
 			line-height: 1.3;
 			color: $color-lblue;
 			border-bottom: .15em solid $color-lblue;
@@ -135,6 +158,15 @@ nav {
 	nav {
 		width: $nav-width-sm;
 		min-height: 100vh;
+		padding: $main-padding;
+		padding-right: 0;
+	}
+	.main-nav {
+		> li {
+			> a {
+				width: calc(100vw - #{$main-padding});
+			}
+		}
 	}
 }
 @mixin nav--lg() {
@@ -165,20 +197,33 @@ main {
 
 /* ---------- Sections---------- */
 section {
+	width: 100%;
 	section {
-		padding: $main-padding;
+		width: 100%;
+		padding: $main-padding * 3 / 5;
 		display: inline-block;
-		float: left;
+		vertical-align: top;
 	}
 }
 
 .white-section {
 	background-color: rgba(255,255,255,0.9);
+	li {
+		color: $color-lblue;
+	}
 }
 
 .lblue-section {
-	background-color: rgba(0,0,255,0.30);
+	background-color: rgba(0,0,255,0.25);
 	color: $color-white;
+	a {
+		&:visited {
+			color: $color-mgrey;
+		}
+		&:active {
+			color: $color-mgrey;
+		}
+	}
 }
 
 .blue-section {
@@ -187,25 +232,46 @@ section {
 	h2 {
 		color: $color-white;
 	}
+	a {
+		color: $color-lblue;
+		&:visited {
+			color: $color-lgrey;
+		}
+		&:active {
+			color: $color-lgrey;
+		}
+	}
 }
-.seperate-section {
-	margin-top: $main-padding;
-	margin-bottom: $main-padding;
+@mixin sections--sm() {
+	section {
+		section {
+			padding: $main-padding;
+		}
+	}
 }
 
 @mixin col--lg() {
-	.col-1 {
+	.col-span-1 {
 		width: 25%;
 	}
-	.col-2 {
+	.col-span-2 {
 		width: 50%;
 	}
-	.col-3 {
+	.col-span-3 {
 		width: 75%;
 	}
 	.margin-left-1 {
 		margin-left: 25%;
 	}
+	.margin-left-2 {
+		margin-left: 50%;
+	}
+}
+
+/* ---------- Individual Styles ---------- M*/
+
+.hero-img {
+	padding-bottom: $main-padding / 2;
 }
 
 /* ---------- Media Queries ---------- */

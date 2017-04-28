@@ -1,11 +1,12 @@
 /* ---------- Small ---------- */
 @media screen and (min-width: 400px) {
-	@include container--sm();
 	@include nav--sm();
 	@include main--sm();
+	@include sections--sm();
 }
 /* ---------- Large ---------- */
 @media screen and (min-width: 1000px) {
+	@include type--lg();
 	@include nav--lg();
 	@include main--lg();
 	@include col--lg();

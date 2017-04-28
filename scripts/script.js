@@ -6,11 +6,11 @@ var AT = {
 		$('body').removeClass('no-js');
 		$('body').addClass('js');
 
-		// Expand and hide sub menus when sections are opened
-		$('.main-nav > li').click(AT.activeMenu);
-
 		// Scroll smoothly when clicking on links
     	$('a[href^="#"]').on('click', AT.smoothScroll);
+
+    	// Expand and hide sub menus when sections are opened
+		$('.main-nav > li').click(AT.activeMenu);
 
     	$(window).resize(AT.resizeMain);
 
@@ -41,7 +41,7 @@ var AT = {
     	main.stop().animate({
     		//Set the scrollTop value to be the initial value plus the offset of the target
     		'scrollTop': initial + $target.offset().top
-    	}, 700, 'swing', function (target) {
+    	}, 700, 'swing', function () {
     		// Set the window hash value to the target
     		window.location.hash = target;
     	});
