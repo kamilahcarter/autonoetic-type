@@ -29,7 +29,7 @@ ol, ul {
 /* ------ Typography ---------- */
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 400;
   line-height: 1.75; }
 
@@ -42,6 +42,10 @@ a {
 
 a:visited, a:active {
   color: #9090ff; }
+
+/* ---------- Helper Classes ---------- */
+.bottom-padding {
+  padding-bottom: 50px; }
 
 /* ---------- Container ---------- */
 body, .container {
@@ -103,16 +107,22 @@ main {
 
 /* ---------- Sections---------- */
 section section {
-  padding: 50px; }
+  padding: 50px;
+  display: inline-block;
+  float: left; }
 
 .white-section {
-  background-color: #ffffff; }
+  background-color: rgba(255, 255, 255, 0.9); }
 
 .blue-section {
   background-color: #0000ff;
   color: #ffffff; }
   .blue-section h2 {
     color: #ffffff; }
+
+.seperate-section {
+  margin-top: 50px;
+  margin-bottom: 50px; }
 
 /* ---------- Media Queries ---------- */
 /* ---------- Small ---------- */
@@ -131,6 +141,15 @@ section section {
     width: 20%; }
 
   main {
-    width: 80%; } }
+    width: 80%; }
+
+  .col-1 {
+    width: 25%; }
+
+  .col-2 {
+    width: 50%; }
+
+  .col-3 {
+    width: 75%; } }
 
 /*# sourceMappingURL=style.css.map */

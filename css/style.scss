@@ -11,7 +11,7 @@ $color-lblue: #9090ff;
 
 $main-padding: 50px;
 $main-font: "Montserrat", sans-serif;
-$main-font-size: 1em;
+$main-font-size: 1.2em;
 $main-font-weight: 400;
 $main-line-height: 1.75;
 
@@ -47,6 +47,12 @@ a {
 a:visited, a:active {
 	color: $color-lblue;
 }
+
+/* ---------- Helper Classes ---------- */
+.bottom-padding {
+	padding-bottom: $main-padding;
+}
+
 /* ---------- Container ---------- */
 body, .container {
 	width: 100%;
@@ -156,11 +162,13 @@ main {
 section {
 	section {
 		padding: $main-padding;
+		display: inline-block;
+		float: left;
 	}
 }
 
 .white-section {
-	background-color: $color-white;
+	background-color: rgba(255,255,255,0.9);
 }
 
 .blue-section {
@@ -168,6 +176,22 @@ section {
 	color: $color-white;
 	h2 {
 		color: $color-white;
+	}
+}
+.seperate-section {
+	margin-top: $main-padding;
+	margin-bottom: $main-padding;
+}
+
+@mixin col--lg() {
+	.col-1 {
+		width: 25%;
+	}
+	.col-2 {
+		width: 50%;
+	}
+	.col-3 {
+		width: 75%;
 	}
 }
 
