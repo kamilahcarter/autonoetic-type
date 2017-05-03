@@ -2,32 +2,45 @@ var AT = {
 
 	onReady: function() {
 
+		// CHECK JAVASCRIPT
 		// Confirm javascript is enabled
 		$('body').removeClass('no-js');
 		$('body').addClass('js');
+
+
+		// ACTIVATE INITIAL SECTION
+		// Set initial active section
+		if (window.location.hash) {
+			var target = window.location.hash;
+			var navLink = $('a[href^="' + target + '"]')
+			var navigation = navLink.parent().parent();
+			if (navigation.hasClass('main-nav')) {
+				navLink.parent().addClass('active');
+			}
+			else if (navigation.hasClass('sub-nav')) {
+				//navLink.parent().addClass('current');
+				navLink.parent().parent().prev().addClass('active');
+			}
+		}
+		else {
+			var navLink = $('a[href="#autonoetic-type"]')
+			navLink.parent().addClass('active');
+		}
+
+		$('.main-nav > li.active').next('.sub-nav').addClass('open')
 
 		// Scroll smoothly when clicking on links
     	$('a[href^="#"]').on('click', AT.smoothScroll);
 
     	// Expand and hide sub menus when sections are opened
-		$('.main-nav > li').click(AT.activeMenu);
+		// $('.main-nav > li').click(AT.activeMenu);
 
     	$(window).resize(AT.resizeMain);
 
-	},
+    	// Active main menu sections
+    	$('main').scroll(AT.mainNavSelection);
 
-    activeMenu:	function() {
-    	// Only make changes if the section isn't already active
-		if (!$(this).hasClass("active")) {
-			// Remove active class from navigation
-			$('.main-nav > li').removeClass('active');
-			// Animate showing and hiding sections
-	    	$('.sub-nav').slideUp("slow");
-	    	$(this).next('.sub-nav').slideDown( "slow");
-	    	// Add active calss to clicked link
-	    	$(this).addClass('active');
-	    }
-    },
+	},
 
     smoothScroll: function (event) {
     	// Prevent default action
@@ -36,18 +49,51 @@ var AT = {
     	var target = this.hash;
    		$target = $(target);
     	var main = $('main');
-    	var initial = main.scrollTop();
+    	var position = main.scrollTop();
+    	// Update the activeMenu
+    	//AT.activeMenu( $('a[href^="' + target + '"]').parent() );
     	// Animate scrolling within the main element
     	main.stop().animate({
     		//Set the scrollTop value to be the initial value plus the offset of the target
-    		'scrollTop': initial + $target.offset().top
+    		'scrollTop': position + $target.offset().top
     	}, 700, 'swing', function () {
     		// Set the window hash value to the target
     		window.location.hash = target;
     	});
     },
 
-	resizeMain: function (lastWindowHeight) {
+     activeMenu: function( newActiveMenu ) {
+		// Animate showing and hiding sections
+	    $('.sub-nav.open').slideUp('slow');
+	    $('.sub-nav.open').removeClass('open');
+    	// Remove active class from navigation
+		$('.main-nav > li').removeClass('active');
+	    // Add active class to clicked link
+	   	newActiveMenu.next('.sub-nav').slideDown("slow");
+	   	newActiveMenu.next('.sub-nav').addClass('open');
+	    newActiveMenu.addClass('active');
+    },
+
+    mainNavSelection: function () {
+    	var activeId = $('.main-nav > li.active a').attr('href');
+    	var target = $(activeId);
+    	var targetTop = target.offset().top;
+    	var targetBottom = targetTop + target.height();
+    	var windowHeight = $(window).height();
+    	// console.log('Target ' + activeId + "	Top " + targetTop + "	Bottom " + targetBottom);
+    	
+    	//if ( $('main').scrollTop() >= $('main').height() - windowHeight) 
+    	if (targetTop < 0 && targetBottom < windowHeight / 2) {
+    		var nextActiveMenu = $('.active').nextAll('.main-nav > li:visible').first();
+    		AT.activeMenu(nextActiveMenu);
+       	}
+       	else if (targetTop > windowHeight / 2 ) {
+       		var prevActiveMenu = $('.active').prevAll('.main-nav > li:visible').first();
+       		AT.activeMenu(prevActiveMenu);
+       	}
+    },
+
+	resizeMain: function () {
 	    // Get the windows height and width
 	    var thewindow = $(this)
 	    var windowHeight = thewindow.height();

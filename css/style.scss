@@ -58,6 +58,15 @@ section {
 		font-size: $main-font-size * 1.2;
 	}
 }
+
+/* --- Plex --- */
+@include font-face(Plex, regular); 
+
+.plex {
+  font-family: 'Plex';
+  letter-spacing: 0;
+}
+
 /* --- Links --- */
 a {
 	color: $color-blue;
@@ -135,7 +144,7 @@ nav {
 }
 .sub-nav {
 	> li {
-		&.active  a {
+		&.current  a {
 			color: $color-blue;
 		}
 	}
@@ -214,7 +223,7 @@ section {
 }
 
 .lblue-section {
-	background-color: rgba(0,0,255,0.25);
+	background-color: rgba(190,190,255,0.9);
 	color: $color-white;
 	a {
 		&:visited {
@@ -270,8 +279,10 @@ section {
 
 /* ---------- Individual Styles ---------- M*/
 
-.hero-img {
-	padding-bottom: $main-padding / 2;
+@mixin individual--sm() {
+	.hero-img {
+		padding-bottom: $main-padding
+	}
 }
 
 /* ---------- Media Queries ---------- */

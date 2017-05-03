@@ -43,6 +43,15 @@ section ul {
 section li {
   color: #0000ff; }
 
+/* --- Plex --- */
+@font-face {
+  font-family: '$name';
+  src: url("../fonts/Plex-regular.eot");
+  src: url("../fonts/Plex-regular.woff2") format("woff2"), url("../fonts/Plex-regular.woff") format("woff"), url("../fonts/Plex-regular.ttf") format("truetype"); }
+.plex {
+  font-family: 'Plex';
+  letter-spacing: 0; }
+
 /* --- Links --- */
 a {
   color: #0000ff; }
@@ -102,7 +111,7 @@ nav {
     .main-nav > li.active + .sub-nav {
       display: initial; }
 
-.sub-nav > li.active a {
+.sub-nav > li.current a {
   color: #0000ff; }
 .sub-nav a {
   color: #000000; }
@@ -136,7 +145,7 @@ section {
     color: #9090ff; }
 
 .lblue-section {
-  background-color: rgba(0, 0, 255, 0.25);
+  background-color: rgba(190, 190, 255, 0.9);
   color: #ffffff; }
   .lblue-section a:visited {
     color: #a2a2a7; }
@@ -156,9 +165,6 @@ section {
       color: #ebebf0; }
 
 /* ---------- Individual Styles ---------- M*/
-.hero-img {
-  padding-bottom: 25px; }
-
 /* ---------- Media Queries ---------- */
 /* ---------- Small ---------- */
 @media screen and (min-width: 400px) {
@@ -202,6 +208,9 @@ section {
     margin-left: 25%; }
 
   .margin-left-2 {
-    margin-left: 50%; } }
+    margin-left: 50%; }
+
+  .hero-img {
+    padding-bottom: 50px; } }
 
 /*# sourceMappingURL=style.css.map */
