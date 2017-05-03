@@ -55,11 +55,6 @@ a {
   src: url("../fonts/Plex-Regular.woff2") format("woff2"), url("../fonts/Plex-Regular.woff") format("woff"), url("../fonts/Plex-Regular.ttf") format("truetype"); }
 .plex {
   font-family: 'Plex';
-  -moz-font-feature-settings: "calt=1, liga=1, clig=1, kern=1";
-  -moz-font-feature-settings: "calt", "liga", "clig", "kern";
-  -ms-font-feature-settings: "calt", "liga", "clig", "kern";
-  -webkit-font-feature-settings: "calt", "liga", "clig", "kern";
-  font-feature-settings: "calt", "liga", "clig", "kern";
   letter-spacing: 0; }
 
 /* --- Cipher --- */
@@ -165,6 +160,13 @@ a {
   .sample.plex {
     margin-top: 5px;
     line-height: 1.5; }
+
+.sample-block {
+  font-size: 1.5em;
+  line-height: 1.5;
+  text-align: justify; }
+  .sample-block.plex {
+    line-height: 2; }
 
 /* ---------- Images ---------- */
 img {

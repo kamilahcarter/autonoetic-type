@@ -3,11 +3,6 @@
 
 .plex {
   font-family: 'Plex';
-  -moz-font-feature-settings:"calt=1, liga=1, clig=1, kern=1";
-	-moz-font-feature-settings:"calt", "liga", "clig", "kern";
-	-ms-font-feature-settings:"calt", "liga", "clig", "kern";
-	-webkit-font-feature-settings:"calt", "liga", "clig", "kern";
-	font-feature-settings:"calt", "liga", "clig", "kern";
   letter-spacing: 0;
 }
 
@@ -31,7 +26,6 @@
 	&.mono {
 		font-family: 'Cipher-Mono';
 	}
-
 }
 .whispers {
 	font-weight: 100;
@@ -69,5 +63,13 @@
 	&.plex {
 		margin-top: $paragraph-margin / 2;
 		line-height: 1.5;
+	}
+}
+.sample-block {
+	font-size: 1.5em;
+	line-height: 1.5;
+	text-align: justify;
+	&.plex {
+		line-height: 2;
 	}
 }
