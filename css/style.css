@@ -38,20 +38,6 @@ p {
   p:first-child {
     margin-top: 0; }
 
-section ul {
-  margin-top: 20px; }
-section li {
-  color: #0000ff; }
-
-/* --- Plex --- */
-@font-face {
-  font-family: '$name';
-  src: url("../fonts/Plex-regular.eot");
-  src: url("../fonts/Plex-regular.woff2") format("woff2"), url("../fonts/Plex-regular.woff") format("woff"), url("../fonts/Plex-regular.ttf") format("truetype"); }
-.plex {
-  font-family: 'Plex';
-  letter-spacing: 0; }
-
 /* --- Links --- */
 a {
   color: #0000ff; }
@@ -59,6 +45,126 @@ a {
     color: #9090ff; }
   a:active {
     color: #9090ff; }
+
+/* --- Typefaces --- */
+/* --- Plex --- */
+@font-face {
+  font-family: "Plex";
+  font-weight: "normal";
+  src: url("../fonts/Plex-Regular.eot");
+  src: url("../fonts/Plex-Regular.woff2") format("woff2"), url("../fonts/Plex-Regular.woff") format("woff"), url("../fonts/Plex-Regular.ttf") format("truetype"); }
+.plex {
+  font-family: 'Plex';
+  -moz-font-feature-settings: "calt=1, liga=1, clig=1, kern=1";
+  -moz-font-feature-settings: "calt", "liga", "clig", "kern";
+  -ms-font-feature-settings: "calt", "liga", "clig", "kern";
+  -webkit-font-feature-settings: "calt", "liga", "clig", "kern";
+  font-feature-settings: "calt", "liga", "clig", "kern";
+  letter-spacing: 0; }
+
+/* --- Cipher --- */
+@font-face {
+  font-family: "Cipher";
+  font-weight: 100;
+  src: url("../fonts/Cipher-Whispers.eot");
+  src: url("../fonts/Cipher-Whispers.woff2") format("woff2"), url("../fonts/Cipher-Whispers.woff") format("woff"), url("../fonts/Cipher-Whispers.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher";
+  font-weight: 200;
+  src: url("../fonts/Cipher-Confides.eot");
+  src: url("../fonts/Cipher-Confides.woff2") format("woff2"), url("../fonts/Cipher-Confides.woff") format("woff"), url("../fonts/Cipher-Confides.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher";
+  font-weight: 300;
+  src: url("../fonts/Cipher-Informs.eot");
+  src: url("../fonts/Cipher-Informs.woff2") format("woff2"), url("../fonts/Cipher-Informs.woff") format("woff"), url("../fonts/Cipher-Informs.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher";
+  font-weight: 400;
+  src: url("../fonts/Cipher-Reports.eot");
+  src: url("../fonts/Cipher-Reports.woff2") format("woff2"), url("../fonts/Cipher-Reports.woff") format("woff"), url("../fonts/Cipher-Reports.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher";
+  font-weight: 500;
+  src: url("../fonts/Cipher-Orders.eot");
+  src: url("../fonts/Cipher-Orders.woff2") format("woff2"), url("../fonts/Cipher-Orders.woff") format("woff"), url("../fonts/Cipher-Orders.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher";
+  font-weight: 600;
+  src: url("../fonts/Cipher-Commands.eot");
+  src: url("../fonts/Cipher-Commands.woff2") format("woff2"), url("../fonts/Cipher-Commands.woff") format("woff"), url("../fonts/Cipher-Commands.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher-Mono";
+  font-weight: 100;
+  src: url("../fonts/Cipher-Whispers-Mono.eot");
+  src: url("../fonts/Cipher-Whispers-Mono.woff2") format("woff2"), url("../fonts/Cipher-Whispers-Mono.woff") format("woff"), url("../fonts/Cipher-Whispers-Mono.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher-Mono";
+  font-weight: 200;
+  src: url("../fonts/Cipher-Confides-Mono.eot");
+  src: url("../fonts/Cipher-Confides-Mono.woff2") format("woff2"), url("../fonts/Cipher-Confides-Mono.woff") format("woff"), url("../fonts/Cipher-Confides-Mono.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher-Mono";
+  font-weight: 300;
+  src: url("../fonts/Cipher-Informs-Mono.eot");
+  src: url("../fonts/Cipher-Informs-Mono.woff2") format("woff2"), url("../fonts/Cipher-Informs-Mono.woff") format("woff"), url("../fonts/Cipher-Informs-Mono.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher-Mono";
+  font-weight: 400;
+  src: url("../fonts/Cipher-Reports-Mono.eot");
+  src: url("../fonts/Cipher-Reports-Mono.woff2") format("woff2"), url("../fonts/Cipher-Reports-Mono.woff") format("woff"), url("../fonts/Cipher-Reports-Mono.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher-Mono";
+  font-weight: 500;
+  src: url("../fonts/Cipher-Orders-Mono.eot");
+  src: url("../fonts/Cipher-Orders-Mono.woff2") format("woff2"), url("../fonts/Cipher-Orders-Mono.woff") format("woff"), url("../fonts/Cipher-Orders-Mono.ttf") format("truetype"); }
+@font-face {
+  font-family: "Cipher-Mono";
+  font-weight: 600;
+  src: url("../fonts/Cipher-Commands-Mono.eot");
+  src: url("../fonts/Cipher-Commands-Mono.woff2") format("woff2"), url("../fonts/Cipher-Commands-Mono.woff") format("woff"), url("../fonts/Cipher-Commands-Mono.ttf") format("truetype"); }
+.cipher {
+  font-family: 'Cipher';
+  letter-spacing: 0; }
+  .cipher.mono {
+    font-family: 'Cipher-Mono'; }
+
+.whispers {
+  font-weight: 100; }
+
+.confides {
+  font-weight: 200; }
+
+.informs {
+  font-weight: 300; }
+
+.reports {
+  font-weight: 400; }
+
+.orders {
+  font-weight: 500; }
+
+.commands {
+  font-weight: 600; }
+
+/* --- Vortext --- */
+@font-face {
+  font-family: "Vortext";
+  font-weight: "normal";
+  src: url("../fonts/Vortext-Regular.eot");
+  src: url("../fonts/Vortext-Regular.woff2") format("woff2"), url("../fonts/Vortext-Regular.woff") format("woff"), url("../fonts/Vortext-Regular.ttf") format("truetype"); }
+.vortext {
+  font-family: 'Vortext';
+  letter-spacing: 0; }
+
+/* --- Sample Strings --- */
+.sample {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  line-height: 1.2; }
+  .sample.plex {
+    margin-top: 5px;
+    line-height: 1.5; }
 
 /* ---------- Images ---------- */
 img {
@@ -71,6 +177,9 @@ img {
 .behind {
   position: relative;
   z-index: -1; }
+
+.pull-right {
+  float: right; }
 
 /* ---------- Container ---------- */
 body, .container {
@@ -89,6 +198,7 @@ nav {
   margin-top: 1.5em;
   font-size: 1.5em;
   font-weight: 700;
+  letter-spacing: 1.5;
   text-transform: uppercase;
   overflow: hidden; }
   .main-nav > li > a {
@@ -133,9 +243,17 @@ main {
 /* ---------- Sections---------- */
 section {
   width: 100%; }
+  section ul {
+    margin-top: 20px; }
+  section li {
+    color: #0000ff; }
   section section {
     width: 100%;
     padding: 30px;
+    display: inline-block;
+    vertical-align: top; }
+  section > img {
+    width: 100%;
     display: inline-block;
     vertical-align: top; }
 
@@ -183,7 +301,9 @@ section {
     overflow-y: auto; }
 
   section section {
-    padding: 50px; } }
+    padding: 50px; }
+  section .align-img {
+    padding-top: 50px; } }
 /* ---------- Large ---------- */
 @media screen and (min-width: 1000px) {
   body {

@@ -1,0 +1,73 @@
+/* --- Plex --- */
+@include font-face(Plex, Regular); 
+
+.plex {
+  font-family: 'Plex';
+  -moz-font-feature-settings:"calt=1, liga=1, clig=1, kern=1";
+	-moz-font-feature-settings:"calt", "liga", "clig", "kern";
+	-ms-font-feature-settings:"calt", "liga", "clig", "kern";
+	-webkit-font-feature-settings:"calt", "liga", "clig", "kern";
+	font-feature-settings:"calt", "liga", "clig", "kern";
+  letter-spacing: 0;
+}
+
+/* --- Cipher --- */
+@include font-face(Cipher, Whispers, 100);
+@include font-face(Cipher, Confides, 200);
+@include font-face(Cipher, Informs, 300);
+@include font-face(Cipher, Reports, 400);
+@include font-face(Cipher, Orders, 500);
+@include font-face(Cipher, Commands, 600);
+@include font-face(Cipher, Whispers-Mono, 100, Cipher-Mono);
+@include font-face(Cipher, Confides-Mono, 200, Cipher-Mono);
+@include font-face(Cipher, Informs-Mono, 300, Cipher-Mono);
+@include font-face(Cipher, Reports-Mono, 400, Cipher-Mono);
+@include font-face(Cipher, Orders-Mono, 500, Cipher-Mono);
+@include font-face(Cipher, Commands-Mono, 600, Cipher-Mono);
+
+.cipher {
+	font-family: 'Cipher';
+	letter-spacing: 0;
+	&.mono {
+		font-family: 'Cipher-Mono';
+	}
+
+}
+.whispers {
+	font-weight: 100;
+}
+.confides {
+	font-weight: 200;
+}
+.informs {
+	font-weight: 300;
+}
+.reports {
+	font-weight: 400;
+}
+.orders {
+	font-weight: 500;
+}
+.commands {
+	font-weight: 600;
+}
+
+/* --- Vortext --- */
+
+@include font-face(Vortext, Regular);
+
+.vortext {
+	font-family: 'Vortext';
+	letter-spacing: 0;
+}
+
+/* --- Sample Strings --- */
+.sample {
+	margin-bottom: $paragraph-margin;
+	font-size: 1.5em;
+	line-height: 1.2;
+	&.plex {
+		margin-top: $paragraph-margin / 2;
+		line-height: 1.5;
+	}
+}

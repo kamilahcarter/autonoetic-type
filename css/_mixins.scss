@@ -1,6 +1,7 @@
-@mixin font-face($name, $weight) {
+@mixin font-face($name, $weight, $weight-num:"normal", $family-name:'#{$name}') {
 	@font-face {
-	  font-family: '$name';
+	  font-family: '#{$family-name}';
+	  font-weight: $weight-num;
 	  src: url('../fonts/#{$name}-#{$weight}.eot');
 	  src: url('../fonts/#{$name}-#{$weight}.woff2') format('woff2'),
 	       url('../fonts/#{$name}-#{$weight}.woff') format('woff'),
